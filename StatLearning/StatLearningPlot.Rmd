@@ -1,0 +1,72 @@
+---
+title: "StatLearningPlot"
+author: "Brain"
+date: "2015年01月12日"
+output: html_document
+---
+To learn statlearning course well, I decide to implement all the plot in ISLR book.
+
+## Introduction: wage data plot
+
+```{r}
+library(ISLR)
+op<-par
+par(mfrow=c(1,3),mar=c(4,4,2,1),oma=c(0,0,2,0))
+#str(Wage)
+with(Wage,{
+  plot(age,wage, pch=20,col="grey",xlab="Age",ylab="Wage")
+  lo <- loess(wage ~ age)
+  x1<-seq(min(age),max(age),(max(age)-min(age))/1000)
+  lines(x1,predict(lo,x1),col="purple",lwd=2)
+  
+  plot(year,wage,pch=20,col="grey",xlab="Year",ylab="Wage")
+  z<-glm(wage ~ year)
+  abline(z,col="purple",lwd=2)
+  
+  plot(education,wage,pch=20,col=c("lightblue","green","yellow","darkblue","orange"), xlab="Education Level",ylab="Wage",xaxt='n')
+  axis(side=1,at=as.numeric(education), labels=as.character(as.numeric(education)))
+  #plot(education,wage,pch=20,col=as.numeric(education), xlab="Education Level",ylab="Wage")
+  mtext("Wage Data in Introduction",outer=TRUE)
+})
+
+par<-op
+```
+
+---
+## Introduction: Stock Market Data
+
+```{r, echo=FALSE}
+str(Smarket)
+```
+
+
+```{r}
+op<-par
+par(mfrow=c(1,3),mar=c(4,4,2,1),oma=c(0,0,2,0))
+#str(Wage)
+with(Smarket,{
+  plot(Direction,Lag1,col=c("lightblue","red"), xlab="Today's Direction",ylab="Percentage change in S&P",main="Yesterday")
+  plot(Direction,Lag2,col=c("lightblue","red"), xlab="Today's Direction",ylab="Percentage change in S&P",main="Two Days Previous")
+  plot(Direction,Lag3,col=c("lightblue","red"), xlab="Today's Direction",ylab="Percentage change in S&P",main="Three Days Previous")
+  mtext("Stock Market Data in Introduction",outer=TRUE)
+})
+par<-op
+```
+
+## Introduction: Gene Expression Data
+
+```{r, echo=FALSE}
+str(NCI60)
+```
+
+
+```{r}
+op<-par
+par(mfrow=c(1,2),mar=c(4,4,2,1),oma=c(0,0,2,0))
+#str(Wage)
+with(NCI60,{
+  
+  mtext("Stock Market Data in Introduction",outer=TRUE)
+})
+par<-op
+```

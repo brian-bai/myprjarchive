@@ -1,0 +1,25 @@
+<%= form_for(@profile,:url => user_profile_path(@profile.user_id)) do |f| %>
+  <%= render 'shared/error_messages', :object => f.object %>
+  <div class="field">
+    <%= f.label :birthday %><br />
+    <%= f.date_select :birthday %>
+  </div>
+  <div class="field">
+    <%= f.label :gender %><br />
+    <%= radio_button_tag('profile[gender]', "m", @profile.gender=="m") %>
+      <%= label_tag(:gender, "male") %>
+    <%= radio_button_tag('profile[gender]', "f", @profile.gender=="f") %>
+      <%= label_tag(:gender, "female") %>
+  </div>
+  <div class="field">
+    <%= f.label :address %><br />
+    <%= f.text_field :address %>
+  </div>
+  <div class="field">
+    <%= f.label :phone %><br />
+    <%= f.text_field :phone %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

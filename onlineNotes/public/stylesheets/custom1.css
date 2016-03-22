@@ -1,0 +1,156 @@
+body {
+ background: #e0edf3;
+}
+
+.container {
+  width: 90%;
+  position: relative;
+  margin: 0, auto;
+}
+#header {
+  text-align: center;
+  background: #080c1d;
+}
+#footer {
+  clear: both;
+  text-align: center;
+  color: blue;
+  padding-top: 10px;
+}
+#maincontent {
+  padding: 10px;
+}
+#sidecontent {
+  padding: 10px;
+}
+#recentnotes {
+  font-size: 10px;
+}
+#yournotes {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+nav {
+  display: block;
+  margin-left: 50%
+  width: 100%
+  color: #e0ffff;
+}
+nav ul {
+  margin: 0 auto;
+  list-style: block;
+}
+
+nav ul li {
+  float: right;
+}
+
+nav ul li a {
+  display: block;
+  margin-left: 20px;
+  width: 80px;
+  font-size: 14px;
+  text-align: center;
+  text-decoration: none;
+}
+
+nav ul li a:visited {
+  color: #09c;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+}
+
+.logo {
+  clear: both;
+  margin: 0px, auto;
+}
+
+.dateandoptions {
+  float:right;
+  text-align:right;
+}
+.pagination {
+  clear: both;
+}
+.note {
+  background: #f3f781;
+  display: block;
+  float: left;
+  width: 30%;
+  height: 200px;
+  overflow: hidden;
+  padding: 10px;
+  margin: 5px;
+  border-width: 1px;
+  border-style: dashed;
+  border-color: gray;
+}
+
+.center_back {
+  background: white;
+  margin-left: 20%;
+  margin-right: 20%;
+  padding-top: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 10px;
+}
+.shadow_block {
+  display: block;
+  background: black;
+  left: 0px;
+  bottom: 10px;
+  height: 50px;
+  position: absolute;
+  width: 100%;
+}
+.note title {
+  position:relative;
+  background-color:#008b8b;
+  padding-left:10px;
+  width:100px;
+}
+.note detail {
+  position:relative;
+  padding-left:20px;
+  width:400px;
+  background-color:#ccccff;
+}
+
+a.link_button {
+  margin-left :auto;
+  margin-right: auto;
+  text-align: center;
+  width: 100px;
+  color: #fff;
+  font-weight: bold;
+  background: #000050;
+  padding: 5px;
+}
+
+.commentform {
+  margin-left: 10px;
+}
+.commentinput {
+  height: 50px;
+}
+
+.comment_list {
+  font-size: 80%;
+  margin-left: 5px;
+  background: #e8e8e8;
+  padding-left: 5px;
+}
+.comment {
+  width: 450px;
+}
+.commentbody {
+  width: 400px;
+  margin-bottom: 0px;
+}
+
+.commenter {
+  text-align: right;
+}

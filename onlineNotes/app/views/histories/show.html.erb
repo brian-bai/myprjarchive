@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Company:</b>
+  <%= @history.company %>
+</p>
+
+<p>
+  <b>Position:</b>
+  <%= @history.position %>
+</p>
+
+<p>
+  <b>Startdate:</b>
+  <%= @history.startdate %>
+</p>
+
+<p>
+  <b>Enddate:</b>
+  <%= @history.enddate %>
+</p>
+
+<p>
+  <b>Details:</b>
+  <%= @history.details %>
+</p>
+
+
+<%= link_to 'Edit', edit_user_history_path(@target_user,@history) %> |
+<%= link_to 'Back', user_histories_path(@target_user) %>

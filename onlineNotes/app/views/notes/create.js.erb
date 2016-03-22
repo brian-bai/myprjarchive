@@ -1,0 +1,11 @@
+<% if @note.errors.any? %>
+  $("#note_notice").hide();
+  $("#note_errors").html("<%= escape_javascript(error_messages_for(@note))%>");
+  $("#note_errors").show();
+<% else %>
+  $("#note_errors").hide();
+  $("#note_notice").html('<div class="flash notice"><%= escape_javascript(flash[:notice]) %></div>');
+  $("#note_notice").show();
+  $("#notes").append("<%= escape_javascript(render(@note)) %>");
+  $('#new_note')[0].reset();
+<% end %>

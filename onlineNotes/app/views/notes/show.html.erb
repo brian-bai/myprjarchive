@@ -1,0 +1,16 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+<div class="title"><b><%= @note.title %></b></div>
+</p>
+
+<p>
+  <div class="detail">
+    <%= @note.detail.html_safe %>
+  </div>
+</p>
+
+<% if signed_in? && @current_user.id == @note.user_id %>
+  <%= link_to 'Edit', edit_note_path(@note) %> |
+<% end %>
+<%= link_to 'Back', notes_path %>

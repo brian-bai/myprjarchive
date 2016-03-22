@@ -1,0 +1,33 @@
+<script>
+$(function(){
+  $('#new_note').dialog({
+    title: 'Write new note',
+    autoOpen: false,
+    width: 420,
+    modal: true
+  });
+  $('.new_note_link').click(function(){
+     $('#new_note').dialog('open');  
+  });
+});
+</script>
+<% if signed_in? %>
+  <%= link_to('Write new note', new_note_path, :class => 'link_button') %>
+  <div id="new_note" style="display:none">
+    <%= render :partial => "form", :locals => { :note => Note.new } %>
+  </div>
+<% else %>
+   <p>
+     Sign up to write notes on the fly.
+     <%= link_to "Sign up now!", signup_path, :class => "link_button" %>
+   </p>
+<% end %>
+<br />
+
+<%= will_paginate %>
+<div class="notes">
+  <%= render :partial => @notes, :locals => { :list => true }%>
+</div>
+<div class="pagination">
+<%= will_paginate %>
+</div>

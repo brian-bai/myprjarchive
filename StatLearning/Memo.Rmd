@@ -1,0 +1,34 @@
+---
+title: "Memo of R"
+output: html_document
+---
+```{r}
+setwd('/home/brian/gitwork/github/StatLearning')
+```
+
+##How to inspect a package?
+```{r}
+search()
+library(ISLR)
+```
+
+##How to inspect a dataset
+```{r}
+str(Wage)
+head(Wage)
+```
+##How to remove objects
+It’s also possible to remove all objects at once:
+> rm ( list = ls () )
+
+
+##data set down load
+http://www-bcf.usc.edu/~gareth/ISL/data.html
+```{r}
+ad<-read.csv("Advertising.csv")
+```
+##opts_chunk issue
+add library("knitr") to the chunk
+
+##qplot in ggplot2
+courses/04/ggplot2

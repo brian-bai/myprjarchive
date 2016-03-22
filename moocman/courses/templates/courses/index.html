@@ -1,0 +1,7 @@
+{% if course_list %}
+    <ul>
+    {% for course in course_list %}
+        <li>{{course.url}}</li>
+    {% endfor %}
+{% endif %}
+

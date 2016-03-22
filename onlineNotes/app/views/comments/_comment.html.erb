@@ -1,0 +1,6 @@
+<%= div_for comment do %>
+  <%= simple_format comment.body, :class => "commentbody" %>
+<div class="commenter">
+  <%= comment.commenter %> write <%= time_ago_in_words(comment.created_at) %> ago
+</div>
+<% end %>

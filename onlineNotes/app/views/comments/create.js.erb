@@ -1,0 +1,8 @@
+<% if @comment.errors.any? %>
+  $("#comment_errors#{@comment.note_id}").html("<%= escape_javascript(error_messages_for(@comment))%>");
+  $("#comment_errors#{@comment.note_id}").show();
+<% else %>
+  $("#comment_errors<%= @comment.note_id %>").hide();
+  $("#comment_list<%= @comment.note_id %>").html("<%= escape_javascript(render :partial => "comments/comment", :collection => @comments) %>");
+  $('#new_comment_<%= @comment.note_id %>')[0].reset();
+<% end %>

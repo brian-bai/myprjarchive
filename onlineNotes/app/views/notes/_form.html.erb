@@ -1,0 +1,42 @@
+<!--
+<script>
+  $(document).ready(function(){
+    $("#new_note").validate({
+      rules: {
+        "#note_title": {required: true, maxlength: 50},
+        "#note_detail": {required: true, maxlength: 1000}
+      }
+    });
+  }); 
+</script>
+-->
+<%= form_for(note) do |f| %>
+  <% if note.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(note.errors.count, "error") %> prohibited this note from being saved:</h2>
+
+      <ul>
+      <% note.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :openlevel %>
+    <%= select_tag 'note[openlevel]', options_for_select([ ['Public', 1], ['Private', 2] ], 
+                                                     note.openlevel ) %>
+  </div>
+  <div class="field">
+    <%= f.label :detail %><br />
+    <%= f.text_area :detail %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

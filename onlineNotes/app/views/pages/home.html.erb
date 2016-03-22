@@ -1,0 +1,19 @@
+<h1>Online Notes</h1>
+<% if signed_in? %>
+  <table class="front" summary="For signed-in users">
+    <tr>
+      <td class="main">
+        <%= link_to "Resume Preview", preview_user_histories_path(current_user) %>
+      </td>
+      <td class="siderbar round">
+        <%= link_to "Employment History", user_histories_path(current_user) %>
+      </td>
+    </tr>
+  </table>
+<% else %>
+  <p>
+    This is the home page for OnlineNotes application.
+  </p>
+
+  <%= link_to "Sign up now!", signup_path, :class => "signup_button round" %>
+<% end %>

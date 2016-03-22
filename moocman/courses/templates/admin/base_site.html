@@ -1,0 +1,17 @@
+{% extends "admin/base.html" %}
+
+{% block title %}{{ title }} | {{ site_title|default:_('Django site admin') }}{% endblock %}
+
+{% block branding %}
+<h1 id="site-name"><a href="{% url 'admin:index' %}">Moocman administration</a></h1>
+{% endblock %}
+
+{% block nav-global %}
+        <div id="user-tools">
+<a href="/admin/courses/category">Category</a>|
+<a href="/admin/courses/course">Course</a>|
+<a href="/admin/courses/task">Task</a>|
+<a href="/admin/courses/vendor">Vendor</a>|
+<a href="/admin/courses/resource">Resource</a>
+        </div>
+{% endblock %}

@@ -1,0 +1,20 @@
+<% @histories.each do |history| %>
+<div class="history_info">
+    <label>Company</label>
+    <span><%= history.company %></span>
+    <br />
+    <label>Position</label>
+    <span><%= history.position %></span>
+    <br />
+    <label>Startdate</label>
+    <span><%= history.startdate %></span>
+    <br />
+    <label>Enddate</label>
+    <span><%= history.enddate %></span>
+    <br />
+    <label>Details</label>
+    <div><%= simple_format history.details %></div>
+    <br />
+</div>
+<br />
+<% end %>

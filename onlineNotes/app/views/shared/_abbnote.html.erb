@@ -1,0 +1,8 @@
+<%= div_for abbnote do %>
+  <div class="title"><b><%= abbnote.title %></b></div>
+  <% if signed_in? && @current_user.id == abbnote.user_id %>
+    You write <%= time_ago_in_words(abbnote.created_at) %> ago<br />
+  <% else %>
+    <%= abbnote.writer %> write <%= time_ago_in_words(abbnote.created_at) %> ago<br />
+  <% end %>
+<% end %>
